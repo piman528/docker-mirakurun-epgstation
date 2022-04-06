@@ -52,7 +52,7 @@ services:
             - ./epgstation/data:/app/data
             - ./epgstation/thumbnail:/app/thumbnail
             - ./epgstation/logs:/app/logs
-            - ./recorded:/app/recorded
+            - /mnt/media/share/recorded:/app/recorded
             - /dev/vchiq:/dev/vchiq
             - /dev/video10:/dev/video10
             - /dev/video11:/dev/video11
