@@ -47,11 +47,21 @@ services:
             context: "./epgstation"
             dockerfile: "debian.Dockerfile"
         volumes:
+            - /etc/localtime:/etc/localtime:ro
             - ./epgstation/config:/app/config
             - ./epgstation/data:/app/data
             - ./epgstation/thumbnail:/app/thumbnail
             - ./epgstation/logs:/app/logs
             - ./recorded:/app/recorded
+            - /dev/vchiq:/dev/vchiq
+            - /dev/video10:/dev/video10
+            - /dev/video11:/dev/video11
+            - /dev/video12:/dev/video12
+            - /dev/video13:/dev/video13
+            - /dev/video14:/dev/video14
+            - /dev/video15:/dev/video15
+            - /dev/video16:/dev/video16
+        privileged: true
         environment:
             TZ: "Asia/Tokyo"
         depends_on:
